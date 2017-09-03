@@ -1,25 +1,20 @@
 import { Component } from '@angular/core';
 import { NgModule, } from '@angular/core';
 
+import { Aluno } from './aluno';
+import { AlunoService } from './aluno.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   aluno: Aluno = {nome: "Olavo", cpf: "123", email: "orc@cin.ufpe.br", github:"orc@cin.ufpe.br"};
-}
+   aluno: Aluno = {nome: "", cpf: "", email: ""};
+   alunoService = new AlunoService();
 
-export class Aluno {
-  public nome: string;
-  public cpf: string;
-  public email: string;
-  public github:string;
-
-  constructor(nome:string, cpf:string, email:string, github:string){
-    this.nome = nome;
-    this.cpf = cpf;
-    this.email = email;
-    this.github = github;
+   gravar(a: Aluno): void {
+     this.alunoService.gravar(a);
+     this.aluno = {nome: "", cpf: "", email: ""};
   }
 }
