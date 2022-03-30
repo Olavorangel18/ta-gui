@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { NgModule, } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,13 @@ export class AppComponent {
 }
 
 export class Aluno {
-  nome: string;
-  cpf: string;
-  email: string;
+  public nome: string;
+  public cpf: string;
+  public email: string;
+
+  constructor(nome:string, cpf:string, email:string){
+    this.nome = nome;
+    this.cpf = cpf;
+    this.email = email;
+  }
 }
