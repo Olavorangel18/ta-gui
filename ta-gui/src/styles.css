@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.content {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: cyan;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
