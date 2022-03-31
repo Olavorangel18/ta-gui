@@ -11,7 +11,7 @@ export class AlunoService {
     var result:any = [];
     if (this.cpfNaoCadastrado(aluno.cpf)) {
       this.alunos.push(aluno);
-      result = this.alunos.length;
+      result = this.alunos;
     }
     return result.length;
   }
