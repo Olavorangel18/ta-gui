@@ -1,3 +1,4 @@
+import { JSDocComment } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +13,7 @@ import { AlunoService } from './aluno.service';
  export class MetasComponent implements OnInit {
     constructor(private alunoService: AlunoService) {}
 
-    alunos: Aluno[];
+    alunos: Aluno[] | undefined;
 
     atualizarAluno(aluno: Aluno): void {
        this.alunoService.atualizar(aluno);

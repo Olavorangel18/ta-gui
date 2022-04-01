@@ -13,11 +13,11 @@ import { Component, OnInit } from '@angular/core';
     constructor(private alunoService: AlunoService) {}
 
     aluno: Aluno = new Aluno();
-    alunos: Aluno[];
+    alunos: Aluno[] | undefined;
     cpfduplicado: boolean = false;
 
      criarAluno(a: Aluno): void {
-      if (this.alunoService.criar(a)) {
+      if (this.alunoService.criar(a) && this.alunos) {
         this.alunos.push(a);
         this.aluno = new Aluno();
       } else {

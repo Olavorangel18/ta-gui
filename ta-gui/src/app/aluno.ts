@@ -15,7 +15,7 @@ export class Aluno {
     this.nome = "";
     this.cpf = "";
     this.email = "";
-    this.metas = "";
+    this.metas;
   }
 
   clone(): Aluno {
