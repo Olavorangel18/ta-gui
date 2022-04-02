@@ -12,6 +12,7 @@ taserver.use(bodyParser.json());
 
 taserver.get('/alunos', function (req, res) {
   var aluno: string = JSON.stringify(alunos.getAlunos());
+  console.log(aluno)
   res.send(aluno);
 })
 
