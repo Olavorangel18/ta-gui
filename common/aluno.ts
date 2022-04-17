@@ -2,17 +2,21 @@ export class Aluno {
   nome: string;
   cpf: string;
   email: string;
-  metas: Map<string,string>;
+  metas: any;
 
   constructor() {
     this.clean();
+    this.nome = "";
+    this.cpf = "";
+    this.email = "";
+    this.metas;
   }
 
   clean(): void {
     this.nome = "";
     this.cpf = "";
     this.email = "";
-    this.metas = new Map<string,string>();
+    this.metas;
   }
 
   clone(): Aluno {
@@ -28,8 +32,8 @@ export class Aluno {
     this.copyMetasFrom(from.metas);
   }
 
-  copyMetasFrom(from: Map<string,string>): void {
-    this.metas = new Map<string,string>();
+  copyMetasFrom(from: any): void {
+    this.metas = [];
     for (let key in from) {
       this.metas[key] = from[key];
     }

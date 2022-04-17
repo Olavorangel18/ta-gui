@@ -16,14 +16,12 @@ export class AlunoService {
   criar(aluno: Aluno): Observable<Aluno> {
     return this.http.post<any>(this.taURL + "/aluno", aluno, {headers: this.headers})
              .pipe(
-                retry(2),
                 map( res => {if (res.success) {return aluno;} else {return aluno;}} )
               );
   }
 
   atualizar(aluno: Aluno): Observable<Aluno> {
     return this.http.put<any>(this.taURL + "/aluno",JSON.stringify(aluno), {headers: this.headers})          .pipe(
-                retry(2),
                 map( res => {if (res.success) {return aluno;} else {return aluno;}} )
               );
   }
